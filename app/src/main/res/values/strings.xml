@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Sean</string>
+    <string name="find_beer">Find Beer</string>
+    <string name="brands">No beer selected</string>
+    <string-array name="beer_brands">
+        <item>Mild</item>
+        <item>Strong</item>
+        <item>Light</item>
+        <item>Extra strong</item>
+    </string-array>
+
+    <string name="stopwatch">Stop Watch</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="reset">Reset</string>
+
+    <string name="frame">Test Frame</string>
+    <string name="duck">It is a duck</string>
+
+
+    <string name="message">Messenger</string>
+    <string name="to_label">To:</string>
+    <string name="email_hint">Enter email address</string>
+    <string name="subj_hint">Subject</string>
+    <string name="message_hint">Message</string>
+    <string name="sendButton">Send</string>
+
+
+</resources>
