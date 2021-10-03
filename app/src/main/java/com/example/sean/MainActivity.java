@@ -10,6 +10,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.sean.WorkOut.WorkOutActivity;
+
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -47,12 +49,27 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickFrame(View view){
         Intent intent1 = new Intent(this,FrameActivity.class);
+        Toast.makeText(this, "Frame Layout", Toast.LENGTH_SHORT).show();
         startActivity(intent1);
     }
 
     public void onClickMessage(View view){
         Intent intent2 = new Intent(this,ConstraintActivity.class);
+        Toast.makeText(this, "Constraint Layout", Toast.LENGTH_SHORT).show();
         startActivity(intent2);
+    }
+
+    public void onClickWorkOut(View view){
+        Intent intent3 = new Intent(this, WorkOutActivity.class);
+        Toast.makeText(this, "Fragments", Toast.LENGTH_SHORT).show();
+        startActivity(intent3);
+    }
+
+    public void onClickWeb(View view){
+        Intent intent4 = new Intent(this, WebViewDemo.class);
+        Toast.makeText(this, "Web view", Toast.LENGTH_SHORT).show();
+        startActivity(intent4);
+
     }
 
 

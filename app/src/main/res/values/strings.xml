@@ -16,6 +16,8 @@
 
     <string name="frame">Test Frame</string>
     <string name="duck">It is a duck</string>
+    
+    <string name="webapp">Web view</string>
 
 
     <string name="message">Messenger</string>
@@ -24,6 +26,12 @@
     <string name="subj_hint">Subject</string>
     <string name="message_hint">Message</string>
     <string name="sendButton">Send</string>
+
+    <string name="work_out">Work Out App</string>
+    <string name="details_btn">Show Details</string>
+
+    <string name="workout_title">Title</string>
+    <string name="workout_des">Description</string>
 
 
 </resources>

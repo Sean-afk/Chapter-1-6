@@ -44,10 +44,10 @@
 
     <Button
         android:id="@+id/frame_test"
-        android:text="@string/frame"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="onClickFrame"/>
+        android:onClick="onClickFrame"
+        android:text="@string/frame" />
 
     <Button
         android:id="@+id/message"
@@ -55,6 +55,20 @@
         android:layout_height="wrap_content"
         android:text="@string/message"
         android:onClick="onClickMessage"/>
+
+    <Button
+        android:id="@+id/work_outBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/work_out"
+        android:onClick="onClickWorkOut"/>
+
+    <Button
+        android:id="@+id/web_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/webapp"
+        android:onClick="onClickWeb"/>
 
 
 
