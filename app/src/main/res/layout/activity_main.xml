@@ -70,6 +70,13 @@
         android:text="@string/webapp"
         android:onClick="onClickWeb"/>
 
+    <Button
+        android:id="@+id/tab_switcherBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tab_switcher"
+        android:onClick="onClickTabSwitch"/>
+
 
 
 </LinearLayout>

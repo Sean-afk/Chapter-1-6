@@ -10,6 +10,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.sean.TabSwitch.TabSwitcher;
 import com.example.sean.WorkOut.WorkOutActivity;
 
 import java.util.List;
@@ -70,6 +71,12 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, "Web view", Toast.LENGTH_SHORT).show();
         startActivity(intent4);
 
+    }
+
+    public void onClickTabSwitch(View view){
+        Intent intent5 = new Intent(this, TabSwitcher.class);
+        Toast.makeText(this, "Tab Switcher", Toast.LENGTH_SHORT).show();
+        startActivity(intent5);
     }
 
 
