@@ -7,12 +7,30 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
+import androidx.fragment.app.FragmentTransaction;
+
 import com.example.sean.R;
 
 
 public class WorkOutDetailFragment extends Fragment {   //WorkoutDetailFragment extends the Fragment class.
 
     private long workOutId; //This is the ID of the workout the user chooses.
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (savedInstanceState == null) {
+            StopWatchFragment stopWatchFragment = new StopWatchFragment();
+            FragmentTransaction ft = getChildFragmentManager().beginTransaction();
+            ft.add(R.id.stop_watch_container,stopWatchFragment);
+            ft.addToBackStack(null);
+            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+            ft.commit();
+        }else{
+            workOutId = savedInstanceState.getLong("workoutId");
+        }
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,   //This is the onCreateView() method. It’s called when Android needs the fragment’s layout.
@@ -25,8 +43,8 @@ public class WorkOutDetailFragment extends Fragment {   //WorkoutDetailFragment 
     @Override
     public void onStart() {
         super.onStart();
-        View view =  getView();  //The getView() method gets the fragment's root View.
-        if(view != null){
+        View view = getView();  //The getView() method gets the fragment's root View.
+        if (view != null) {
             TextView title = view.findViewById(R.id.workout_title);
             WorkOut workOut = WorkOut.workouts[(int) workOutId];
             title.setText(workOut.getName());
@@ -35,7 +53,12 @@ public class WorkOutDetailFragment extends Fragment {   //WorkoutDetailFragment 
         }
     }
 
-    public void setWorkOut(long id){  //This is a setter method for the workout ID. The activity will use this method to set the value of the workout ID.
-        this.workOutId=id;
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putLong("workoutId",workOutId);
+    }
+
+    public void setWorkOut(long id) {  //This is a setter method for the workout ID. The activity will use this method to set the value of the workout ID.
+        this.workOutId = id;
     }
 }

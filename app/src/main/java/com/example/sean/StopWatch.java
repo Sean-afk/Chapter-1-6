@@ -1,43 +1,50 @@
 package com.example.sean;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-import android.os.Handler;
-import android.view.View;
-import android.widget.TextView;
 
-import java.util.Locale;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
+
+import com.example.sean.WorkOut.StopWatchFragment;
 
 public class StopWatch extends AppCompatActivity {
-    //No of seconds displayed on stopwatch
+    /*//No of seconds displayed on stopwatch
     private int seconds = 0;
     //Is the stopwatch running?
     private boolean running, wasRunning;
-    /*We added a new variable, wasRunning, to record whether the stopwatch was running before the onStop() method
+    We added a new variable, wasRunning, to record whether the stopwatch was running before the onStop() method
     was called so that we know whether to set it running
-    again when the activity becomes visible again.*/
-    private TextView timeView;
+    again when the activity becomes visible again.
+    private TextView timeView;*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stop_watch);
 
-        if (savedInstanceState != null) {
+        if(savedInstanceState ==null){
+            StopWatchFragment stopWatchFragment = new StopWatchFragment();
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.add(R.id.stop_watch_container,stopWatchFragment);
+            ft.addToBackStack(null);
+            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+            ft.commit();
+        }
+
+
+       /* if (savedInstanceState != null) {
             seconds = savedInstanceState.getInt("seconds");
             running = savedInstanceState.getBoolean("running");
-            wasRunning = savedInstanceState.getBoolean("wasRunning"); //We’ll restore the state of the wasRunning variable if the activity is recreated.
+            wasRunning = savedInstanceState.getBoolean("wasRunning"); We’ll restore the state of the wasRunning variable if the activity is recreated.
         }
 
         timeView = findViewById(R.id.time_view);
 
-        runTimer();
+        runTimer();*/
 
     }
 
-    @Override
+  /*  @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putInt("seconds", seconds);
@@ -45,12 +52,12 @@ public class StopWatch extends AppCompatActivity {
         outState.putBoolean("wasRunning", wasRunning); //Save the state of the wasRunning variable.
     }
 
-     /*@Override
+     @Override
     protected void onStop() {
         super.onStop();
         wasRunning = running; //Record whether the stopwatch was running when the onStop() method was called.
         running = false;
-    }*/
+    }
 
     /*@Override
     protected void onStart() {
@@ -58,7 +65,7 @@ public class StopWatch extends AppCompatActivity {
         if(wasRunning) {   //Implement the onStart()method.
             running = true; //If the stopwatch was running set it running again.
         }
-    }*/
+    }
 
     @Override
     protected void onPause() {
@@ -115,12 +122,9 @@ public class StopWatch extends AppCompatActivity {
                 handler.postDelayed(this, 1000); //Post the code again with delay of 1 sec
 
             }
-        });
-    }
-
-
-
-
-
-
+        });*/
 }
+
+
+
+
